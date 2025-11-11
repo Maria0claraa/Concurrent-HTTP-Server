@@ -1,4 +1,4 @@
-# Linux Recycle Bin System
+# Multi-Threaded Web Server with IPC and Semaphores
 
 ## Authors
 Inês Batista, 124877<br>
