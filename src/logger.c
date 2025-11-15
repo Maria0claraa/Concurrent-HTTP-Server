@@ -1,5 +1,10 @@
 //LOGGER COM VERIFICAÇÃO snprintf
 
+// regista as mensagens em ficheiro e terminal
+// formata os logs (Apache Combined Log Format)
+// roda os ficheiros de log quando excedem os 10mb
+// múltiplas threads podem loggar ao mesmo tempo
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -169,11 +174,7 @@ void logger_log(log_level_t level, const char *format, ...) {
 }
 
 // Log HTTP access in Apache Combined Log Format
-void logger_log_access(const char *client_ip, const char *method, 
-                       const char *url, int status_code, 
-                       size_t response_size, const char *referer, 
-                       const char *user_agent) {
-    
+void logger_log_access(const char *client_ip, const char *method, const char *url, int status_code, size_t response_size, const char *referer, const char *user_agent) {
     pthread_mutex_lock(&log_mutex);
 
     if (!logger.log_fp) {

@@ -1,3 +1,8 @@
+// deve ler o ficheiro server.conf com parâmetros do servidor
+// validar se os valores estão corretos
+// fornece valores por defeito se o ficheiro não existir por alguma razão
+// permite o acesso seguro aos valores via setters/getters
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
